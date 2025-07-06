@@ -56,5 +56,40 @@ export class HomePage {
     console.log('rakii8516@gmail.com', eValue);
     expect(eValue).toContain(eValue);
     
+
+
    }
+   async filldetails(){
+    await this.page.click(HomePageLocators.title);
+    await this.page.fill(HomePageLocators.password, 'Bsnl@94673');
+    await this.page.selectOption(HomePageLocators.dayofBirth, '1');
+    await this.page.selectOption(HomePageLocators.monthofBirth, 'January');
+    await this.page.selectOption(HomePageLocators.yearofBirth, '1990');
+    await this.page.fill(HomePageLocators.FirstName, 'Rakesh');
+    await this.page.fill(HomePageLocators.LastName, 'Kumar');
+    await this.page.fill(HomePageLocators.address, '4 compton crescent taita');
+    await this.page.selectOption(HomePageLocators.country, 'New Zealand');
+    await this.page.fill(HomePageLocators.state, 'Wellington');
+    await this.page.fill(HomePageLocators.city, 'Lower Hutt');  
+    await this.page.fill(HomePageLocators.zipcode, '5011');
+    await this.page.fill(HomePageLocators.mobileNumber, '0211216320');
+
+   }
+   async createAccountBtn(){
+   await this.page.click(HomePageLocators.createAccountBtn); 
+    console.log('Click on Create Account Button');
+    await this.page.click(HomePageLocators.accountcreatedContinueBtn);
+    }
+
+    async verifyLoggedInUser() {
+      const loggedInText = this.page.locator(HomePageLocators.loggedInAsUserText);
+      await expect(loggedInText).toBeVisible();
+      const textContent = await loggedInText.textContent();
+    }
+    async deleteAccount() {
+      await this.page.click(HomePageLocators.deleteAccountBtn);
+    }
+    async deletebuttonContinue() {
+      await this.page.click(HomePageLocators.deletebuttonContinue);
+    }
 }

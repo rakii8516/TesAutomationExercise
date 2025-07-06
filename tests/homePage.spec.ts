@@ -13,4 +13,9 @@ test('Launch AutomationExercise and verify home page', async ({ page }) => {
   await homePage.enterNameAndEmail();
   await homePage.clickSubmitButton();
   await homePage.verifyAccountInformationVisble();
+  await homePage.filldetails()
+  await homePage.createAccountBtn();
+  await homePage.verifyLoggedInUser();
+  await homePage.deleteAccount();  
+  await homePage.deletebuttonContinue()
 });
