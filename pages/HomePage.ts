@@ -33,7 +33,7 @@ export class HomePage {
   
   async enterNameAndEmail(){     
     await this.page.fill(HomePageLocators.userName, 'Rakesh Kumar');
-    await this.page.fill(HomePageLocators.emailId, 'rakii8516@gmail.com');   
+    await this.page.fill(HomePageLocators.emailId, 'ranasa1322@gmail.com');   
   }
   
   async clickSubmitButton(){ 
@@ -53,7 +53,7 @@ export class HomePage {
     const emailInput = this.page.locator(HomePageLocators.readEmailId);
     const eValue=await emailInput.inputValue();
     
-    console.log('rakii8516@gmail.com', eValue);
+    console.log('ranasa1322@gmail.com', eValue);
     expect(eValue).toContain(eValue);
     
 
